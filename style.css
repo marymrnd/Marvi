@@ -1,0 +1,322 @@
+:root {
+    --orange: #BB4318;
+    --beige: #FBE3DD;
+    --brown: #200810;
+    --brown-dark: #140406;
+    --white: #FFFFFF;
+}
+
+body {
+    margin: 0;
+    font-family: 'Skia', sans-serif;
+    color: var(--beige);
+    background-color: var(--brown);
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    position: sticky;
+    top: 0;
+    background-color: var(--brown-dark);
+    z-index: 100;
+}
+
+.navbar .logo img {
+    max-height: 50px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--beige);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: var(--orange);
+}
+
+/* HERO */
+.hero {
+    height: 90vh;
+    position: relative;
+    overflow: hidden;
+    background-attachment: fixed;
+}
+
+.hero-slide {
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top:0; left:0; right:0; bottom:0;
+    background: rgba(0,0,0,0.5);
+}
+
+.hero-text {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: var(--orange);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.hero-text.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* fade-in */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* CATEGORIES */
+.categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    gap: 20px;
+    padding: 50px;
+}
+
+.category {
+    position: relative;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.category h3 {
+    background: rgba(187, 67, 24, 0.8);
+    color: var(--beige);
+    padding: 12px 25px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.category:hover {
+    transform: scale(1.05);
+}
+
+.category:hover h3 {
+    background: rgba(187, 67, 24, 1);
+    color: var(--white);
+}
+
+/* PRODUCTS */
+.products {
+    padding: 80px 50px;
+    background: var(--brown-dark);
+    text-align: center;
+}
+
+.products h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: var(--orange);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 30px;
+}
+
+.product {
+    background: var(--brown);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(187, 67, 24, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(187, 67, 24, 0.5);
+}
+
+.product img {
+    width: 100%;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.product:hover img {
+    transform: scale(1.1);
+}
+
+.product h3 {
+    color: var(--orange);
+}
+
+.product p {
+    color: var(--beige);
+}
+
+/* PROMO */
+.promo {
+    background: url('riccardo-mion-SjagRK38Q6Q-unsplash.jpg') center/cover no-repeat;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 50px 0;
+}
+
+
+.promo::after {
+    content: '';
+    position: absolute;
+    top:0; left:0; right:0; bottom:0;
+    background: rgba(0,0,0,0.35); /* чуть светлее */
+    pointer-events: none; /* <-- ВАЖНО */
+}
+
+
+.promo-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+
+.promo-content h2 {
+    color: var(--orange);
+}
+
+.promo-content p {
+    color: var(--beige);
+}
+
+/* BUTTON */
+.btn {
+    padding: 12px 30px;
+    background-color: var(--orange);
+    color: var(--beige);
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(187, 67, 24, 0.6);
+}
+
+/* ABOUT */
+.about {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 80px 50px;
+    gap: 50px;
+}
+
+.about img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+.about-content {
+    flex: 1;
+}
+
+/* FOOTER */
+footer {
+    background: var(--brown-dark);
+    color: var(--beige);
+    padding: 60px 50px 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-column h3, .footer-column h4 {
+    margin-bottom: 15px;
+    color: var(--orange);
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column a {
+    color: var(--beige);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-column a:hover {
+    color: var(--orange);
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 14px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .navbar {
+        padding: 15px 20px;
+    }
+    .hero-text h1 {
+        font-size: 40px;
+    }
+    .hero-text p {
+        font-size: 16px;
+    }
+    .about {
+        flex-direction: column;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}

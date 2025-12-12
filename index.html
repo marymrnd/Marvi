@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARVI</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Skia&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="logo">
+        <img src="logobuchstaben.png" alt="MARVI Logo">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#collections">Kollektionen</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#about">Über uns</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-slide" style="background-image:url(cap.png)">
+        <div class="hero-text fade-in">
+            <h1>MARVI Kollektion 2025</h1>
+            <p>Luxus trifft Streetstyle & Details</p>
+            <a href="#shop" class="btn">Jetzt entdecken</a>
+        </div>
+    </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories" id="collections">
+    <div class="category fade-in" style="background-image:url(mike-von-bWUOx0SaSAk-unsplash.jpg)">
+        <h3>Damen</h3>
+    </div>
+    <div class="category fade-in" style="background-image:url(praise-judah-7e3NoIGuo3o-unsplash.jpg)">
+        <h3>Herren</h3>
+    </div>
+    <div class="category fade-in" style="background-image:url(mael-balland-BR06GtY5WqI-unsplash.jpg)">
+        <h3>Accessoires</h3>
+    </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="shop">
+    <h2 class="fade-in">Beliebte Produkte</h2>
+    <div class="product-grid">
+        <div class="product fade-in">
+            <img src="image (4) (1).jpg" alt="T-shirt">
+            <h3>DETAIL T-Shirt</h3>
+            <p>€49,99</p>
+        </div>
+        <div class="product fade-in">
+            <img src="image (2).png" alt="Bomber">
+            <h3>EMBER Bomber</h3>
+            <p>€149,99</p>
+        </div>
+        <div class="product fade-in">
+            <img src="image (5).jpg" alt= "Schuhe">
+            <h3>AFTER DARK Boots</h3>
+            <p>€159,99</p>
+        </div>
+        <div class="product fade-in">
+            <img src="image (6).jpg" alt="Jeans">
+            <h3>TRACE Jeans</h3>
+            <p>€89,99</p>
+        </div>
+    </div>
+</section>
+
+<!-- PROMO BANNER -->
+<section class="promo fade-in">
+    <div class="promo-content">
+        <h2>Neue Kollektion: Herbst/Winter 2025</h2>
+        <p>Entdecke limitierte Editionen mit auffälligen Details.</p>
+        <a href="#shop" class="btn">Jetzt entdecken</a>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+    <div class="about-content fade-in">
+        <h2>Über MARVI</h2>
+        <p>MARVI ist für Menschen, die im Alltag klare Formen lieben – aber trotzdem nach einem kleinen Funken suchen, der ihren Look besonders macht. Unsere Mode bleibt minimalistisch, doch jedes Stück trägt ein dezentes Detail, das Persönlichkeit zeigt, ohne laut zu sein.
+Inspiriert von Kandinskys Idee, dass selbst ein kleines Element eine ganze Komposition verändern kann, setzen wir auf subtile Akzente, die dich von innen heraus strahlen lassen. Nicht schrill, nicht überladen – sondern angenehm anders.
+MARVI – für alle, die Einfachheit schätzen und trotzdem ihre eigene Farbe in den Tag bringen wollen.
+Simple Yours.</p>
+    </div>
+    <img class="fade-in" src="hangtagohnehintergrund.png" alt="Über uns">
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+    <div class="footer-grid fade-in">
+        <div class="footer-column">
+            <h3>MARVI</h3>
+            <p>Luxus Streetstyle mit kreativen Details.</p>
+        </div>
+        <div class="footer-column">
+            <h4>Menü</h4>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#collections">Kollektionen</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#about">Über uns</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Kontakt</h4>
+            <p>Email: info@marvi.com</p>
+            <p>Tel: +49 123 456 789</p>
+        </div>
+        <div class="footer-column">
+            <h4>Folge uns</h4>
+            <p>Instagram | Facebook | Pinterest</p>
+        </div>
+    </div>
+    <p class="footer-bottom">&copy; 2025 MARVI. Alle Rechte vorbehalten.</p>
+</footer>
+
+<script>
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll){
+        entries.forEach(entry => {
+            if(!entry.isIntersecting) return;
+            entry.target.classList.add('appear');
+            appearOnScroll.unobserve(entry.target);
+        });
+    }, appearOptions);
+    faders.forEach(fader => appearOnScroll.observe(fader));
+</script>
+
+</body>
+</html>
